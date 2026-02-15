@@ -1,0 +1,36 @@
+# Environment
+.env
+*.env.local
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+venv/
+.venv/
+
+# Database
+*.db
+*.sqlite3
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Alembic
+alembic/versions/__pycache__/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Plans
+plan.md
+phases/
