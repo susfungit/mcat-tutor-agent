@@ -28,3 +28,19 @@ class MessageOut(BaseModel):
 class ChatHistoryResponse(BaseModel):
     session_id: int
     messages: List[MessageOut]
+
+
+class SocraticChatRequest(BaseModel):
+    content: str = Field(min_length=1, max_length=5000)
+    session_id: Optional[int] = None
+    section: str = Field(max_length=200)
+    topic: str = Field(max_length=100)
+    concept: str = Field(max_length=200)
+
+
+class SocraticChatResponse(BaseModel):
+    response: str
+    session_id: int
+    escalation_level: int
+    topic: str
+    concept: str

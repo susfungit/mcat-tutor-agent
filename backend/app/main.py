@@ -9,8 +9,8 @@ from slowapi.util import get_remote_address
 
 from app.config import settings
 from app.database import engine, Base
-from app.models import User, StudySession, ConversationMessage  # noqa: F401
-from app.routers import auth, tutor
+from app.models import User, StudySession, ConversationMessage, TutorMemory, Question, UserResponse  # noqa: F401
+from app.routers import auth, tutor, questions
 
 limiter = Limiter(key_func=get_remote_address)
 
@@ -49,6 +49,7 @@ app.add_middleware(
 
 app.include_router(auth.router)
 app.include_router(tutor.router)
+app.include_router(questions.router)
 
 
 @app.get("/health")
