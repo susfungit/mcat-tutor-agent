@@ -79,11 +79,19 @@ class QuestionGenerator:
             PASSAGE_QUESTION_PROMPT if question_type == "passage"
             else DISCRETE_QUESTION_PROMPT
         )
+        if difficulty <= 3:
+            difficulty_description = "basic recall"
+        elif difficulty <= 6:
+            difficulty_description = "application and analysis"
+        else:
+            difficulty_description = "complex multi-step reasoning"
+
         prompt_text = template.format(
             section=section,
             topic=topic,
             subtopic=subtopic or topic,
             difficulty=difficulty,
+            difficulty_description=difficulty_description,
         )
 
         last_error = None

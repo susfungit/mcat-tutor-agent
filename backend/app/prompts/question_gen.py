@@ -34,7 +34,7 @@ Return ONLY valid JSON with this exact structure (no markdown, no explanation):
 Requirements:
 - Question should test understanding, not memorization
 - All answer choices should be plausible
-- Difficulty {difficulty}/10: {"basic recall" if difficulty <= 3 else "application and analysis" if difficulty <= 6 else "complex multi-step reasoning"}
+- Difficulty {difficulty}/10: {difficulty_description}
 - The explanation must be thorough enough to teach the concept
 """
 
@@ -74,5 +74,5 @@ Requirements:
 - The passage should present experimental data or a real-world scenario
 - The question should require applying passage information to the topic
 - All answer choices should be plausible
-- Difficulty {difficulty}/10: {"basic recall" if difficulty <= 3 else "application and analysis" if difficulty <= 6 else "complex multi-step reasoning"}
+- Difficulty {difficulty}/10: {difficulty_description}
 """
